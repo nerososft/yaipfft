@@ -4,10 +4,14 @@
 
 using namespace framework;
 
-Window Window::Instance;
-
 Window::Window() {
 
+}
+
+Window::Window(int windowWidth, int windowHeight, const char *windowName){
+    this->windowHeight = windowHeight;
+    this->windowWidth = windowWidth;
+    this->windowName = (char *)windowName;
 }
 
 void Window::OnEvent(SDL_Event* Event) {
@@ -97,9 +101,6 @@ int Window::Execute(int argc, char* argv[]) {
         Cleanup();
         return 1;
 }
-
-
-Window* Window::GetInstance() { return &Window::Instance;  }
 
 int Window::GetWindowWidth()  { return windowWidth;  }
 int Window::GetWindowHeight() { return windowHeight;  }

@@ -67,12 +67,11 @@ ui32 Color::getAlpha(){
 
 
 ui32  Color::getGray(/* TODO: Need multi mode */){
-	float gray = this->getR() * 0.03f + this->getG() * 0.59f + this->getB() * 0.11f;
-	return 0xFF * gray;
+	return (this->getR() * 299 + this->getG() * 587 + this->getB() * 114 + 500)/1000;
 }
 
 ui32  Color::get2Val(){
-	if( this->getGray() > (0xFF >> 1)){
+	if((this->getR()+this->getR()+this->getR())/3 >= 0xFF >> 1 ){
 		return 0xFF;
 	}
 	return 0;

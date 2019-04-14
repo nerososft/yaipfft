@@ -8,8 +8,6 @@ namespace framework
 {
 	class Window{
    		private:
-	
-   		    static Window Instance;
    		    bool running = true;
 
    		    SDL_Window* window = NULL;
@@ -26,8 +24,6 @@ namespace framework
 			
 	
    		private:
-	
-   		    Window();
 
    		    // Capture SDL Events
    		    void OnEvent(SDL_Event* Event);
@@ -52,8 +48,9 @@ namespace framework
    		    int Execute(int argc, char* argv[]);
 
    		public:
-	
-   		    static Window* GetInstance();
+
+		    Window();
+			Window(int windowWidth, int windowHeight, const char *windowName);
 
    		    int GetWindowWidth();
    		    int GetWindowHeight();

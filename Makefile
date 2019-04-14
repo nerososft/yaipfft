@@ -30,13 +30,14 @@ LIB=-lstdc++ -ljpeg -lSDL2 -lSDL2main `sdl2-config --cflags --libs`
 run:	clean	all
 	$(BUILD_DIR)/app
  
-all:	main.o Window.o	JPGImageLoader.o 	ImageLoader.o GrayFliter.o 	Fliter.o	IOManager.o PixelMatrix.o Pixel.o
+all:	main.o Window.o	JPGImageLoader.o 	ImageLoader.o GrayFliter.o BinaryValFliter.o 	Fliter.o	IOManager.o PixelMatrix.o Pixel.o
 	$(CXX) -o $(BUILD_DIR)/app \
 	$(OBJS_DIR)/main.o \
 	$(OBJS_DIR)/Window.o \
 	$(OBJS_DIR)/JPGImageLoader.o \
 	$(OBJS_DIR)/ImageLoader.o \
 	$(OBJS_DIR)/GrayFliter.o \
+	$(OBJS_DIR)/BinaryValFliter.o \
 	$(OBJS_DIR)/Fliter.o \
 	$(OBJS_DIR)/IOManager.o \
 	$(OBJS_DIR)/PixelMatrix.o \
@@ -53,6 +54,8 @@ ImageLoader.o:
 	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/ImageLoader.o -c $(BASE_DIR)/framework/src/ImageLoader.cpp $(LIB)
 GrayFliter.o:
 	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/GrayFliter.o -c $(BASE_DIR)/framework/src/GrayFliter.cpp $(LIB)
+BinaryValFliter.o:
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/BinaryValFliter.o -c $(BASE_DIR)/framework/src/BinaryValFliter.cpp $(LIB)
 Fliter.o:
 	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Fliter.o -c $(BASE_DIR)/framework/src/Fliter.cpp $(LIB)
 IOManager.o:
