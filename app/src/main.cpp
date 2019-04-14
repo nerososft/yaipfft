@@ -20,7 +20,7 @@ int main(int argc, char *argv[]){
 	grayWindow->setPixelMatrix(grayFliter->doFliter());
 
 	framework::WindowManager *manager = framework::WindowManager::GetWindowManagerInstance();
-	// manager->createWindow(binaryWindow);
+	manager->createWindow(binaryWindow);
 	manager->createWindow(grayWindow);
 	manager->renderWindow();
 

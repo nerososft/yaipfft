@@ -25,7 +25,7 @@ CPP_FLAGS=-I$(INCLUDE_DIR) -std=c++11 -Wall
 LINK_FLAGS=
 
 # extera lib
-LIB=-lstdc++ -ljpeg -lSDL2 -lSDL2main `sdl2-config --cflags --libs`
+LIB=-lstdc++ -ljpeg -lSDL2 -lSDL2main `sdl2-config --cflags --libs` -lpthread
 
 run:	clean	all
 	$(BUILD_DIR)/app

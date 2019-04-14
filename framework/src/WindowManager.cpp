@@ -16,9 +16,6 @@ WindowManager::WindowManager(/* args */){
 }
 	
 int WindowManager::createWindow(Window* window){
-
-	// malloc new windows memory space
-	Window *windowsMemoryAddr;
 	if(windowNum == 0){
 		windowNum=1;
 	}else{
@@ -26,41 +23,20 @@ int WindowManager::createWindow(Window* window){
 	}
 	Log("create window, windowNum: %d \n",windowNum);
 
-	windowsMemoryAddr = (Window *)malloc(windowNum * sizeof(Window));
-	if(!windowsMemoryAddr){
-		Log("window memory malloc failed! windowNum:",windowNum);
-		return -1;
-	}
-
-	// copy windows to new windowsMemoryAddr;
-	Window *tmp = this->windows;
-	Window *tmpNewWindowsAddr = windowsMemoryAddr;
-
-	// while(this->windows->GetWindowHeight()){
-	// 	*windowsMemoryAddr = *windows;
-	// 	windows++;
-	// 	windowsMemoryAddr++;
-	// }
-
 	// add new Window
-	*windowsMemoryAddr = *window;
-
-	// release old windows memory
-//	free(this->windows);
-
-	// assign new windowMemoryAddr to windows
-	this->windows = window;
+	this->windows.push_back(window);
 
 	return 1;
 }
 
 int WindowManager::renderWindow(){
-	// for(int i = 0; i<this->windowNum; i++){
+	Log("render window, windowNum: %d \n",windowNum);
+	for(int i = 0; i < this->windows.size(); i++){
 		// new thread to render window;
-		Thread *thread = new Thread();
-		thread->assign(this->windows);
-	    thread->start();
-	// }
+		Thread thread;
+		thread.assign(this->windows.at(i));
+	    thread.start();
+	}
 }
 
 WindowManager::~WindowManager(){

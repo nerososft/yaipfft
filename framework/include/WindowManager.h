@@ -2,6 +2,7 @@
 #define __FRAMEWORK_WINDOW_MANAGER_H__
 
 #include "../include/Window.h"
+#include <vector>
 
 namespace framework{
 
@@ -11,7 +12,7 @@ namespace framework{
 		static WindowManager windowManagerInstance;
 
 		int windowNum = 0;
-		Window *windows;
+		std::vector<Window*> windows;
 
 	public:
 		WindowManager(/* args */);
