@@ -33,10 +33,10 @@ int main(int argc, char *argv[]){
 }
 ```
 ## image
-![image](docs/img/img.png)
+![image](https://raw.githubusercontent.com/nerososft/yaipfft/master/docs/img/img.png)
 ## gray
-![gray](docs/img/gray.png)
+![gray](https://raw.githubusercontent.com/nerososft/yaipfft/master/docs/img/gray.png)
 ## Binary Value
-![Binary](docs/img/2.png)
+![Binary](https://raw.githubusercontent.com/nerososft/yaipfft/master/docs/img/2.png)
 ## DeNoise
-![DeNoise](docs/img/noise.png)
+![DeNoise](https://raw.githubusercontent.com/nerososft/yaipfft/master/docs/img/noise.png)
