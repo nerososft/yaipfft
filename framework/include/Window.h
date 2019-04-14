@@ -3,10 +3,11 @@
 
 #include <SDL2/SDL.h>
 #include "../include/PixelMatrix.h"
+#include "../include/Runnable.h"
 
 namespace framework
 {
-	class Window{
+	class Window : public Runnable{
    		private:
    		    bool running = true;
 
@@ -41,11 +42,13 @@ namespace framework
    		    void Cleanup();
 	
 
+			void Run();
+
 
 
    		public:
 	
-   		    int Execute(int argc, char* argv[]);
+   		    int Execute();
 
    		public:
 

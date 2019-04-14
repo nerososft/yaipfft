@@ -86,7 +86,7 @@ void Window::Cleanup() {
 }
 
 
-int Window::Execute(int argc, char* argv[]) {
+int Window::Execute() {
     if(!Init()) return 0;
         SDL_Event Event;
         while(running) {
@@ -100,6 +100,10 @@ int Window::Execute(int argc, char* argv[]) {
         }
         Cleanup();
         return 1;
+}
+
+void Window::Run(){
+    this->Execute(); 
 }
 
 int Window::GetWindowWidth()  { return windowWidth;  }

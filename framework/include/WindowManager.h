@@ -16,7 +16,7 @@ namespace framework{
 	public:
 		WindowManager(/* args */);
 
-		WindowManager* GetWindowManagerInstance();
+		static	WindowManager* GetWindowManagerInstance();
 
 
 		int getWindowNum(){return this->windowNum;}

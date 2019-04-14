@@ -1,12 +1,15 @@
 #include "../include/WindowManager.h"
 #include "../include/Log.h"
+#include "../include/Thread.h"
 
 using namespace framework;
 
 WindowManager WindowManager::windowManagerInstance;
 
 
-WindowManager* WindowManager::GetWindowManagerInstance() { return &WindowManager::windowManagerInstance;  }
+WindowManager* WindowManager::GetWindowManagerInstance() { 
+	return &WindowManager::windowManagerInstance;  
+}
 
 WindowManager::WindowManager(/* args */){
 
@@ -21,6 +24,8 @@ int WindowManager::createWindow(Window* window){
 	}else{
 		windowNum++;
 	}
+	Log("create window, windowNum: %d \n",windowNum);
+
 	windowsMemoryAddr = (Window *)malloc(windowNum * sizeof(Window));
 	if(!windowsMemoryAddr){
 		Log("window memory malloc failed! windowNum:",windowNum);
@@ -31,26 +36,31 @@ int WindowManager::createWindow(Window* window){
 	Window *tmp = this->windows;
 	Window *tmpNewWindowsAddr = windowsMemoryAddr;
 
-	while(windows){
-		*windowsMemoryAddr = *windows;
-		windows++;
-		windowsMemoryAddr++;
-	}
+	// while(this->windows->GetWindowHeight()){
+	// 	*windowsMemoryAddr = *windows;
+	// 	windows++;
+	// 	windowsMemoryAddr++;
+	// }
 
 	// add new Window
 	*windowsMemoryAddr = *window;
 
 	// release old windows memory
-	free(this->windows);
+//	free(this->windows);
 
 	// assign new windowMemoryAddr to windows
-	this->windows = tmpNewWindowsAddr;
+	this->windows = window;
 
 	return 1;
 }
 
 int WindowManager::renderWindow(){
-	
+	// for(int i = 0; i<this->windowNum; i++){
+		// new thread to render window;
+		Thread *thread = new Thread();
+		thread->assign(this->windows);
+	    thread->start();
+	// }
 }
 
 WindowManager::~WindowManager(){

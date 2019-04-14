@@ -30,10 +30,13 @@ LIB=-lstdc++ -ljpeg -lSDL2 -lSDL2main `sdl2-config --cflags --libs`
 run:	clean	all
 	$(BUILD_DIR)/app
  
-all:	main.o Window.o	JPGImageLoader.o 	ImageLoader.o GrayFliter.o BinaryValFliter.o 	Fliter.o	IOManager.o PixelMatrix.o Pixel.o
+all:	main.o Window.o WindowManager.o Thread.o	Runnable.o	JPGImageLoader.o 	ImageLoader.o GrayFliter.o BinaryValFliter.o 	Fliter.o	IOManager.o PixelMatrix.o Pixel.o
 	$(CXX) -o $(BUILD_DIR)/app \
 	$(OBJS_DIR)/main.o \
 	$(OBJS_DIR)/Window.o \
+	$(OBJS_DIR)/WindowManager.o \
+	$(OBJS_DIR)/Thread.o \
+	$(OBJS_DIR)/Runnable.o \
 	$(OBJS_DIR)/JPGImageLoader.o \
 	$(OBJS_DIR)/ImageLoader.o \
 	$(OBJS_DIR)/GrayFliter.o \
@@ -48,6 +51,12 @@ main.o:
 	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/main.o -c $(BASE_DIR)/app/src/main.cpp $(LIB)
 Window.o:
 	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Window.o -c $(BASE_DIR)/framework/src/Window.cpp $(LIB)
+WindowManager.o:
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/WindowManager.o -c $(BASE_DIR)/framework/src/WindowManager.cpp $(LIB)
+Runnable.o:
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Runnable.o -c $(BASE_DIR)/framework/src/Runnable.cpp $(LIB)
+Thread.o:
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Thread.o -c $(BASE_DIR)/framework/src/Thread.cpp $(LIB)
 JPGImageLoader.o:
 	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/JPGImageLoader.o -c $(BASE_DIR)/framework/src/JPGImageLoader.cpp $(LIB)
 ImageLoader.o:
