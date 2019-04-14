@@ -64,6 +64,7 @@ int JPGImageLoader::read_jpeg_file(const char *input_filename)  {
 }  
 
 PixelMatrix *JPGImageLoader::loadImage(const char *imgPath){
+	 this->setPixelMatrix(new PixelMatrix());
 	// this->getIO()->loadFile(imgPath);
 	// std::cout<<this->getIO()->getBufferSize()<<std::endl;
 	read_jpeg_file(imgPath);

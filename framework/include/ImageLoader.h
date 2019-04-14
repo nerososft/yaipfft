@@ -22,7 +22,9 @@ namespace framework{
 			ImageLoader(ImageFormat format);
 
 			IOManager *getIO(){return this->io;}
+
 			PixelMatrix *getPixelMatrix(){return this->pixels;};
+			void setPixelMatrix(PixelMatrix *pixels){this->pixels=pixels;};
 
 			virtual PixelMatrix *loadImage(const char *imgPath) = 0;
 
