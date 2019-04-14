@@ -50,29 +50,29 @@ all:	main.o Window.o WindowManager.o Thread.o	Runnable.o	JPGImageLoader.o 	Image
 main.o:
 	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/main.o -c $(BASE_DIR)/app/src/main.cpp $(LIB)
 Window.o:
-	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Window.o -c $(BASE_DIR)/framework/src/Window.cpp $(LIB)
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Window.o -c $(BASE_DIR)/framework/src/window/Window.cpp $(LIB)
 WindowManager.o:
-	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/WindowManager.o -c $(BASE_DIR)/framework/src/WindowManager.cpp $(LIB)
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/WindowManager.o -c $(BASE_DIR)/framework/src/window/WindowManager.cpp $(LIB)
 Runnable.o:
-	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Runnable.o -c $(BASE_DIR)/framework/src/Runnable.cpp $(LIB)
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Runnable.o -c $(BASE_DIR)/framework/src/thread/Runnable.cpp $(LIB)
 Thread.o:
-	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Thread.o -c $(BASE_DIR)/framework/src/Thread.cpp $(LIB)
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Thread.o -c $(BASE_DIR)/framework/src/thread/Thread.cpp $(LIB)
 JPGImageLoader.o:
-	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/JPGImageLoader.o -c $(BASE_DIR)/framework/src/JPGImageLoader.cpp $(LIB)
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/JPGImageLoader.o -c $(BASE_DIR)/framework/src/io/JPGImageLoader.cpp $(LIB)
 ImageLoader.o:
-	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/ImageLoader.o -c $(BASE_DIR)/framework/src/ImageLoader.cpp $(LIB)
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/ImageLoader.o -c $(BASE_DIR)/framework/src/io/ImageLoader.cpp $(LIB)
 GrayFliter.o:
-	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/GrayFliter.o -c $(BASE_DIR)/framework/src/GrayFliter.cpp $(LIB)
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/GrayFliter.o -c $(BASE_DIR)/framework/src/fliter/GrayFliter.cpp $(LIB)
 BinaryValFliter.o:
-	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/BinaryValFliter.o -c $(BASE_DIR)/framework/src/BinaryValFliter.cpp $(LIB)
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/BinaryValFliter.o -c $(BASE_DIR)/framework/src/fliter/BinaryValFliter.cpp $(LIB)
 Fliter.o:
-	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Fliter.o -c $(BASE_DIR)/framework/src/Fliter.cpp $(LIB)
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Fliter.o -c $(BASE_DIR)/framework/src/fliter/Fliter.cpp $(LIB)
 IOManager.o:
-	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/IOManager.o -c $(BASE_DIR)/framework/src/IOManager.cpp $(LIB)
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/IOManager.o -c $(BASE_DIR)/framework/src/io/IOManager.cpp $(LIB)
 PixelMatrix.o:
-	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/PixelMatrix.o -c $(BASE_DIR)/framework/src/PixelMatrix.cpp $(LIB)
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/PixelMatrix.o -c $(BASE_DIR)/framework/src/image/PixelMatrix.cpp $(LIB)
 Pixel.o:
-	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Pixel.o -c $(BASE_DIR)/framework/src/Pixel.cpp $(LIB)
+	$(CXX) $(CPP_FLAGS) -o $(OBJS_DIR)/Pixel.o -c $(BASE_DIR)/framework/src/image/Pixel.cpp $(LIB)
 
 clean:
 	rm -rf $(OBJS_DIR)

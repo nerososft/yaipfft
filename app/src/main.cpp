@@ -1,10 +1,10 @@
 
 #include <iostream>
-#include "../../framework/include/JPGImageLoader.h"
-#include "../../framework/include/GrayFliter.h"
-#include "../../framework/include/BinaryValFliter.h"
-#include "../../framework/include/WindowManager.h"
-#include "../../framework/include/Window.h"
+#include "../../framework/include/io/JPGImageLoader.h"
+#include "../../framework/include/fliter/GrayFliter.h"
+#include "../../framework/include/fliter/BinaryValFliter.h"
+#include "../../framework/include/window/WindowManager.h"
+#include "../../framework/include/window/Window.h"
 
 int main(int argc, char *argv[]){
 	
