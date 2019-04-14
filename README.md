@@ -32,3 +32,11 @@ int main(int argc, char *argv[]){
 	return 1;
 }
 ```
+## image
+![image](docs/img/img.png)
+## gray
+![gray](docs/img/gray.png)
+## Binary Value
+![Binary](docs/img/2.png)
+## DeNoise
+![DeNoise](docs/img/noise.png)
